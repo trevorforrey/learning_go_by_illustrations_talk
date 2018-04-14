@@ -63,19 +63,30 @@ http://trevorforrey.com
 .image ./imgs/channek_send.jpg _ 900
 .code ./examples/firstChannelSend.go /^func main/,/^}/
 
+* Anonymous Go Routines
+.image ./imgs/bigAnonGopher.jpg _ 700
+.code ./examples/anonymous.go /^func main/,/^}/
+
 * Example of sending / receiving on a channel
+.play ./exec/exampleSendReceive.go /^func main/,/^}/
+
 
 * Channel Blocking
 - Allows go routines to 'sync' back up
 
 * Blocking on a Send
 .image ./imgs/blockOnSend.jpg _ 900
+.play ./exec/blockOnSend.go /^func main/,/^}/
+
 
 * Blocking on a Receive
 .image ./imgs/blockonRec.jpg _ 900
+.play ./exec/blockOnReceive.go /^func main/,/^}/
+
 
 * Unbuffered Channels
 .image ./imgs/bigoneChannel.jpg _ 900
+.code ./examples/firstChannel.go /^func main/,/^}/
 
 
 * Buffered Channels
@@ -91,17 +102,21 @@ http://trevorforrey.com
 * Putting it all Together
 .image ./imgs/independent_arch.jpg _ 950
 
-* Full Program
-- Code example of full program
+* Passing in / returning a channel
+.code ./exec/passInAndReturnChannel.go /^func gen/,/^}/
 
-* Before you go, you should know..
-Anonymous Go Routines
-.image ./imgs/bigAnonGopher.jpg _ 700
-.code ./examples/anonymous.go /^func main/,/^}/
+* Passing in / returning a channel contd
+.code ./exec/passInAndReturnChannel.go /^func finder/,/^}/
+
+* Passing in / returning a channel example
+.play ./exec/passInAndReturnChannel.go /^func main/,/^}/
+
+* Full Program
+.play ./exec/allTogether.go /^func main/,/^}/
 
 * Main Function is a Go Routine
 .image ./imgs/mainGopher.jpg _ 900
-- Example of stalled and unstalled go program
+.play ./exec/mainGopherExample.go /^func main/,/^}/
 
 * Better ways than time out
 .image ./imgs/imdonegopher.jpg _ 700
@@ -116,9 +131,9 @@ Anonymous Go Routines
 
 * Where to learn next
 .image ./imgs/ReadingGopher.jpg _ 600
+.link https://gobyexample.com/ Go by Example
 .link https://www.youtube.com/watch?v=cN_DpYBzKso Rob Pike - 'Concurrency Is Not Parallelism'
 .link https://www.youtube.com/watch?v=f6kdp27TYZs&t=938s Google I/O 2012 — Go Concurrency Patterns
-.link https://www.youtube.com/watch?v=ltqV6pDKZD8&t=1315s GopherCon 2017: Edward Muller — Go Anti-Patterns
 
 
 
