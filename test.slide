@@ -8,7 +8,7 @@ http://trevorforrey.com
 @tforrey
 
 * Go What?
-.image ./gopher.png _ 300
+.image ./imgs/gopher.png _ 300
 
 - Opinionated
 - Dependencies built-in binaries
@@ -16,32 +16,32 @@ http://trevorforrey.com
 
 * Go Where?
 
-.image ./docker-logo.png _ 150
-.image ./kubernetes.svg _ 150
-.image ./mozilla.png _ 150
-.image ./twitch.png _ 150
+.image ./imgs/docker-logo.png _ 150
+.image ./imgs/kubernetes.svg _ 150
+.image ./imgs/mozilla.png _ 150
+.image ./imgs/twitch.png _ 150
 
 * Background - Single Threaded vs. Multi Threaded
 - Single Threaded: One function after another
 - Multi-Threaded: independent functions share resources
 
-- picture of mining gopher
+.image ./imgs/WorkingGopher.jpg _ 500
 
 * One Gopher Architecture
-- picture of mining gopher one thread arch
+.image ./imgs/single_arch.jpg _ 950
 
 * One Gopher Code
 .play ./exec/singleThreaded.go /^func main/,/^}/
 
 * Multi Gophered Architecture
-- picture of multi threaded go arch
+.image ./imgs/independent_arch.jpg _ 950
 
 * Tools We'll Need
 - A way to create Gophers
 - A way to communicate between Gophers
 
 * Go Routines
-- Gopher being born picture
+.image ./imgs/eggsGopher.jpg _ 950
 
 * Two Gophers, One Mine
 .play ./exec/twoFinders.go /^func main/,/^}/
@@ -52,15 +52,15 @@ http://trevorforrey.com
 - But How will we communicate between gophers?
 
 * Channels
-- Image of gophers on cans
+.image ./imgs/gopher_cans.jpg _ 900
 
 * Channel Creation
-- Image of channel being created
+.image ./imgs/channel.jpg _ 900
 .code ./examples/firstChannel.go /^func main/,/^}/
 
 
 * Sending / Receiving on Channels
-- Image of Sending on a Channel
+.image ./imgs/channek_send.jpg _ 900
 .code ./examples/firstChannelSend.go /^func main/,/^}/
 
 * Example of sending / receiving on a channel
@@ -69,41 +69,44 @@ http://trevorforrey.com
 - Allows go routines to 'sync' back up
 
 * Blocking on a Send
-- Image of gopher sleeping on a send
+.image ./imgs/blockOnSend.jpg _ 900
 
 * Blocking on a Receive
-- Image of gopher sleeing on a receive
+.image ./imgs/blockonRec.jpg _ 900
 
 * Unbuffered Channels
-- Image of unbuffered channel
+.image ./imgs/bigoneChannel.jpg _ 900
+
 
 * Buffered Channels
-- Image of buffered channel
+.image ./imgs/bigmultiChannel.jpg _ 900
 .code ./examples/bufferedChannel.go /^func main/,/^}/
 
 * Buffered Channels cont
-- Image of no blocking interactions
+.image ./imgs/channel_sends.jpg _ 900
 
 * Buffered Channels Example
 - Example code of non-blocking buffered channels
 
 * Putting it all Together
-- Image of full program
+.image ./imgs/independent_arch.jpg _ 950
 
 * Full Program
 - Code example of full program
 
 * Before you go, you should know..
 Anonymous Go Routines
-- Image of anonymous go routine
+.image ./imgs/bigAnonGopher.jpg _ 700
 .code ./examples/anonymous.go /^func main/,/^}/
 
 * Main Function is a Go Routine
-- Image of king Gopher
+.image ./imgs/mainGopher.jpg _ 900
 - Example of stalled and unstalled go program
 
 * Better ways than time out
-- I'm done gopher image
+.image ./imgs/imdonegopher.jpg _ 700
+.code ./examples/imdone.go /^func main/,/^}/
+
 
 * You can range over a channel
 - Read values as they come in
@@ -112,7 +115,7 @@ Anonymous Go Routines
 - Code of select / default example
 
 * Where to learn next
-- Image of gopher reading
+.image ./imgs/ReadingGopher.jpg _ 600
 .link https://www.youtube.com/watch?v=cN_DpYBzKso Rob Pike - 'Concurrency Is Not Parallelism'
 .link https://www.youtube.com/watch?v=f6kdp27TYZs&t=938s Google I/O 2012 — Go Concurrency Patterns
 .link https://www.youtube.com/watch?v=ltqV6pDKZD8&t=1315s GopherCon 2017: Edward Muller — Go Anti-Patterns
