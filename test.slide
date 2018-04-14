@@ -5,7 +5,7 @@ Trevor Forrey
 Job title, Company
 joe@example.com
 http://trevorforrey.com
-@twitter_name
+@tforrey
 
 * Go What?
 .image ./gopher.png _ 300
@@ -27,10 +27,97 @@ http://trevorforrey.com
 
 - picture of mining gopher
 
-* Single Threaded Architecture
+* One Gopher Architecture
 - picture of mining gopher one thread arch
 
 * One Gopher Code
 .play ./exec/singleThreaded.go /^func main/,/^}/
+
+* Multi Gophered Architecture
+- picture of multi threaded go arch
+
+* Tools We'll Need
+- A way to create Gophers
+- A way to communicate between Gophers
+
+* Go Routines
+- Gopher being born picture
+
+* Two Gophers, One Mine
+.play ./exec/twoFinders.go /^func main/,/^}/
+
+* Current Status
+- Create multiple threads easily
+- Even more lightweight that a normal 'thread'
+- But How will we communicate between gophers?
+
+* Channels
+- Image of gophers on cans
+
+* Channel Creation
+- Image of channel being created
+.code ./examples/firstChannel.go /^func main/,/^}/
+
+
+* Sending / Receiving on Channels
+- Image of Sending on a Channel
+.code ./examples/firstChannelSend.go /^func main/,/^}/
+
+* Example of sending / receiving on a channel
+
+* Channel Blocking
+- Allows go routines to 'sync' back up
+
+* Blocking on a Send
+- Image of gopher sleeping on a send
+
+* Blocking on a Receive
+- Image of gopher sleeing on a receive
+
+* Unbuffered Channels
+- Image of unbuffered channel
+
+* Buffered Channels
+- Image of buffered channel
+.code ./examples/bufferedChannel.go /^func main/,/^}/
+
+* Buffered Channels cont
+- Image of no blocking interactions
+
+* Buffered Channels Example
+- Example code of non-blocking buffered channels
+
+* Putting it all Together
+- Image of full program
+
+* Full Program
+- Code example of full program
+
+* Before you go, you should know..
+Anonymous Go Routines
+- Image of anonymous go routine
+.code ./examples/anonymous.go /^func main/,/^}/
+
+* Main Function is a Go Routine
+- Image of king Gopher
+- Example of stalled and unstalled go program
+
+* Better ways than time out
+- I'm done gopher image
+
+* You can range over a channel
+- Read values as they come in
+
+* Non-blocking reads / writes
+- Code of select / default example
+
+* Where to learn next
+- Image of gopher reading
+.link https://www.youtube.com/watch?v=cN_DpYBzKso Rob Pike - 'Concurrency Is Not Parallelism'
+.link https://www.youtube.com/watch?v=f6kdp27TYZs&t=938s Google I/O 2012 — Go Concurrency Patterns
+.link https://www.youtube.com/watch?v=ltqV6pDKZD8&t=1315s GopherCon 2017: Edward Muller — Go Anti-Patterns
+
+
+
 
 * os.Exec

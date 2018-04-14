@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./roles"
+	"github.com/trevorforrey/learning_go_by_illustrations_talk/exec/roles"
 )
 
 func main() {
