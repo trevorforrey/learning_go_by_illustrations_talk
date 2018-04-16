@@ -2,14 +2,15 @@ Learning Go
 Through Illustrations
 
 Trevor Forrey
-Job title, Company
-joe@example.com
 http://trevorforrey.com
 @tforrey
 
 * Go What?
 .image ./imgs/gopher.png _ 300
 
+Developed at Google in 2009
+
+What makes it so great?
 - Opinionated
 - Dependencies built-in binaries
 - Concurrency Primitives
@@ -63,7 +64,7 @@ http://trevorforrey.com
 .image ./imgs/channek_send.jpg _ 900
 .code ./examples/firstChannelSend.go /^func main/,/^}/
 
-* Anonymous Go Routines
+* (Heads Up!) Anonymous Go Routines
 .image ./imgs/bigAnonGopher.jpg _ 700
 .code ./examples/anonymous.go /^func main/,/^}/
 
@@ -122,10 +123,6 @@ http://trevorforrey.com
 .image ./imgs/imdonegopher.jpg _ 700
 .code ./examples/imdone.go /^func main/,/^}/
 
-
-* You can range over a channel
-- Read values as they come in
-
 * Non-blocking reads / writes
 - Code of select / default example
 
@@ -134,8 +131,3 @@ http://trevorforrey.com
 .link https://gobyexample.com/ Go by Example
 .link https://www.youtube.com/watch?v=cN_DpYBzKso Rob Pike - 'Concurrency Is Not Parallelism'
 .link https://www.youtube.com/watch?v=f6kdp27TYZs&t=938s Google I/O 2012 — Go Concurrency Patterns
-
-
-
-
-* os.Exec
