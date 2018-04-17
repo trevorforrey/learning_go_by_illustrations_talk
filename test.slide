@@ -47,8 +47,12 @@ What makes it so great?
 * Two Gophers, One Mine
 .play ./exec/twoFinders.go /^func main/,/^}/
 
+* (Heads Up!) Anonymous Go Routines
+.image ./imgs/bigAnonGopher.jpg _ 700
+.code ./examples/anonymous.go /^func main/,/^}/
+
 * Current Status
-- Create multiple threads easily
+- Start up go routines easily
 - Even more lightweight that a normal 'thread'
 - But How will we communicate between gophers?
 
@@ -63,10 +67,6 @@ What makes it so great?
 * Sending / Receiving on Channels
 .image ./imgs/channek_send.jpg _ 900
 .code ./examples/firstChannelSend.go /^func main/,/^}/
-
-* (Heads Up!) Anonymous Go Routines
-.image ./imgs/bigAnonGopher.jpg _ 700
-.code ./examples/anonymous.go /^func main/,/^}/
 
 * Example of sending / receiving on a channel
 .play ./exec/exampleSendReceive.go /^func main/,/^}/
@@ -98,10 +98,22 @@ What makes it so great?
 .image ./imgs/channel_sends.jpg _ 900
 
 * Buffered Channels Example
-- Example code of non-blocking buffered channels
+.play ./exec/bufferedChannelsExample.go /^func main/,/^}/
 
-* Putting it all Together
+* Current Status
+- Create Go Routines (Gophers)
+- Create Channels
+- Now Masters of Concurrency!
+
+* Desired Pipeline
 .image ./imgs/independent_arch.jpg _ 950
+
+* Final Pipeline
+.play ./exec/finalPipeline.go /^func main/,/^}/
+
+* But what if I need to have more gophers (for speed of course)?!
+Let's get fancy....by passing and returning channels
+.image ./imgs/AsynchMultWorkers.svg _ 500
 
 * Passing in / returning a channel
 .code ./exec/passInAndReturnChannel.go /^func gen/,/^}/
@@ -115,16 +127,22 @@ What makes it so great?
 * Full Program
 .play ./exec/allTogether.go /^func main/,/^}/
 
+* Before You Go...
+You should know!
+
 * Main Function is a Go Routine
 .image ./imgs/mainGopher.jpg _ 900
 .play ./exec/mainGopherExample.go /^func main/,/^}/
 
 * Better ways than time out
 .image ./imgs/imdonegopher.jpg _ 700
-.code ./examples/imdone.go /^func main/,/^}/
+.play ./exec/imdone.go /^func main/,/^}/
 
-* Non-blocking reads / writes
-- Code of select / default example
+* Non-blocking reads
+.play ./exec/nonblockingRead.go /^func main/,/^}/
+
+* Non-blocking writes
+.play ./exec/nonblockingWrite.go /^func main/,/^}/
 
 * Where to learn next
 .image ./imgs/ReadingGopher.jpg _ 600
