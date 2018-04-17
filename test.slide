@@ -96,6 +96,7 @@ What makes it so great?
 
 * Buffered Channels cont
 .image ./imgs/channel_sends.jpg _ 900
+Now we don't block on every transaction!
 
 * Buffered Channels Example
 .play ./exec/bufferedChannelsExample.go /^func main/,/^}/
@@ -103,7 +104,7 @@ What makes it so great?
 * Current Status
 - Create Go Routines (Gophers)
 - Create Channels
-- Now Masters of Concurrency!
+- You are all Masters of Concurrency!
 
 * Desired Pipeline
 .image ./imgs/independent_arch.jpg _ 950
@@ -126,6 +127,20 @@ Let's get fancy....by passing and returning channels
 
 * Full Program
 .play ./exec/allTogether.go /^func main/,/^}/
+
+* What's the Point though?
+If we can pass in and return channels, we can share channels between multiple
+Go routines (Gophers).
+- Concurrency Pattern: Fan In / Fan Out
+
+* Fan In
+.image ./imgs/fanIn.jpg _ 900
+
+* Fan Out
+.image ./imgs/fanOut.jpg _ 700
+
+* Now we can do stuff like this
+.image ./imgs/AsynchMultWorkers.svg _ 500
 
 * Before You Go...
 You should know!
