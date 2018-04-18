@@ -47,7 +47,7 @@ What makes it so great?
 * Two Gophers, One Mine
 .play ./exec/twoFinders.go /^func main/,/^}/
 
-* (Heads Up!) Anonymous Go Routines
+* What if we want to be sneaky? (Anonymous Go Routines)
 .image ./imgs/bigAnonGopher.jpg _ 700
 .code ./examples/anonymous.go /^func main/,/^}/
 
@@ -96,7 +96,7 @@ What makes it so great?
 
 * Buffered Channels cont
 .image ./imgs/channel_sends.jpg _ 900
-Now we don't block on every transaction!
+Now we don't block on every channel write/read!
 
 * Buffered Channels Example
 .play ./exec/bufferedChannelsExample.go /^func main/,/^}/
@@ -117,6 +117,9 @@ Let's get fancy....by passing and returning channels
 .image ./imgs/AsynchMultWorkers.svg _ 500
 
 * Passing in / returning a channel
+.code ./examples/generatorStructure.go /^func gen/,/^}/
+
+* Passing in / returning a channel
 .code ./exec/passInAndReturnChannel.go /^func gen/,/^}/
 
 * Passing in / returning a channel contd
@@ -133,11 +136,11 @@ If we can pass in and return channels, we can share channels between multiple
 Go routines (Gophers).
 - Concurrency Pattern: Fan In / Fan Out
 
-* Fan In
-.image ./imgs/fanIn.jpg _ 900
-
 * Fan Out
 .image ./imgs/fanOut.jpg _ 700
+
+* Fan In
+.image ./imgs/fanIn.jpg _ 900
 
 * Now we can do stuff like this
 .image ./imgs/AsynchMultWorkers.svg _ 500
