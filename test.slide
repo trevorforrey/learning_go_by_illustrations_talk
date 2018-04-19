@@ -14,6 +14,11 @@ What makes it so great?
 - Opinionated
 - Dependencies built-in binaries
 - Concurrency Primitives
+- Amazing Community
+
+: Opinionated: Formats your code for you If you have a variable that isn't used, your program won't compile
+: Compiles down to a binary with/ dependencies inside. don't even need the go sdk to run on another computer
+: Concurrency is at the forefront in Go, and the language was designed to allow for simple and powerful concurrent programs
 
 * Go Where?
 
@@ -28,24 +33,33 @@ What makes it so great?
 
 .image ./imgs/WorkingGopher.jpg _ 500
 
+: Explain differences between single & multi threaded programs
+: Talk about mining example
+
 * One Gopher Architecture
 .image ./imgs/single_arch.jpg _ 950
 
+: one gopher performs all functions
+
 * One Gopher Code
-.play ./exec/singleThreaded.go /^func main/,/^}/
+.play ./exec/1_singleThreaded.go /^func main/,/^}/
 
 * Multi Gophered Architecture
 .image ./imgs/independent_arch.jpg _ 950
+
+: multiple gophers perform a separate function
 
 * Tools We'll Need
 - A way to create Gophers
 - A way to communicate between Gophers
 
+: End on 'Now how do we create Gophers?'
+
 * Go Routines
 .image ./imgs/eggsGopher.jpg _ 950
 
 * Two Gophers, One Mine
-.play ./exec/twoFinders.go /^func main/,/^}/
+.play ./exec/2_twoFinders.go /^func main/,/^}/
 
 * What if we want to be sneaky? (Anonymous Go Routines)
 .image ./imgs/bigAnonGopher.jpg _ 700
@@ -53,8 +67,8 @@ What makes it so great?
 
 * Current Status
 - Start up go routines easily
-- Even more lightweight that a normal 'thread'
-- But How will we communicate between gophers?
+- Even more lightweight than a normal 'thread'
+- But how will we communicate between gophers?
 
 * Channels
 .image ./imgs/gopher_cans.jpg _ 900
@@ -69,7 +83,7 @@ What makes it so great?
 .code ./examples/firstChannelSend.go /^func main/,/^}/
 
 * Example of sending / receiving on a channel
-.play ./exec/exampleSendReceive.go /^func main/,/^}/
+.play ./exec/3_exampleSendReceive.go /^func main/,/^}/
 
 
 * Channel Blocking
@@ -77,12 +91,12 @@ What makes it so great?
 
 * Blocking on a Send
 .image ./imgs/blockOnSend.jpg _ 900
-.play ./exec/blockOnSend.go /^func main/,/^}/
+.play ./exec/4_blockOnSend.go /^func main/,/^}/
 
 
 * Blocking on a Receive
 .image ./imgs/blockonRec.jpg _ 900
-.play ./exec/blockOnReceive.go /^func main/,/^}/
+.play ./exec/5_blockOnReceive.go /^func main/,/^}/
 
 
 * Unbuffered Channels
@@ -94,23 +108,27 @@ What makes it so great?
 .image ./imgs/bigmultiChannel.jpg _ 900
 .code ./examples/bufferedChannel.go /^func main/,/^}/
 
+
 * Buffered Channels cont
 .image ./imgs/channel_sends.jpg _ 900
 Now we don't block on every channel write/read!
 
+
 * Buffered Channels Example
-.play ./exec/bufferedChannelsExample.go /^func main/,/^}/
+.play ./exec/6_bufferedChannelsExample.go /^func main/,/^}/
+
 
 * Current Status
 - Create Go Routines (Gophers)
 - Create Channels
 - You are all Masters of Concurrency!
 
+
 * Desired Pipeline
 .image ./imgs/independent_arch.jpg _ 950
 
 * Final Pipeline
-.play ./exec/finalPipeline.go /^func main/,/^}/
+.play ./exec/7_finalPipeline.go /^func main/,/^}/
 
 * But what if I need to have more gophers (for speed of course)?!
 Let's get fancy....by passing and returning channels
@@ -119,48 +137,65 @@ Let's get fancy....by passing and returning channels
 * Passing in / returning a channel
 .code ./examples/generatorStructure.go /^func gen/,/^}/
 
+
 * Passing in / returning a channel
-.code ./exec/passInAndReturnChannel.go /^func gen/,/^}/
+.code ./exec/8_passInAndReturnChannel.go /^func gen/,/^}/
+
 
 * Passing in / returning a channel contd
-.code ./exec/passInAndReturnChannel.go /^func finder/,/^}/
+.code ./exec/8_passInAndReturnChannel.go /^func finder/,/^}/
+
 
 * Passing in / returning a channel example
-.play ./exec/passInAndReturnChannel.go /^func main/,/^}/
+.play ./exec/8_passInAndReturnChannel.go /^func main/,/^}/
+
 
 * Full Program
-.play ./exec/allTogether.go /^func main/,/^}/
+.play ./exec/9_allTogether.go /^func main/,/^}/
+
 
 * What's the Point though?
 If we can pass in and return channels, we can share channels between multiple
 Go routines (Gophers).
+.image ./imgs/AsynchMultWorkers.svg _ 450
 - Concurrency Pattern: Fan In / Fan Out
+
 
 * Fan Out
 .image ./imgs/fanOut.jpg _ 700
 
+
 * Fan In
 .image ./imgs/fanIn.jpg _ 900
+
 
 * Now we can do stuff like this
 .image ./imgs/AsynchMultWorkers.svg _ 500
 
+
 * Before You Go...
 You should know!
 
+
 * Main Function is a Go Routine
 .image ./imgs/mainGopher.jpg _ 900
-.play ./exec/mainGopherExample.go /^func main/,/^}/
+.play ./exec/10_mainGopherExample.go /^func main/,/^}/
+
+: Special because once the main go routine terminates, all over go routines terminate as well.
 
 * Better ways than time out
 .image ./imgs/imdonegopher.jpg _ 700
-.play ./exec/imdone.go /^func main/,/^}/
+.play ./exec/11_imdone.go /^func main/,/^}/
 
 * Non-blocking reads
-.play ./exec/nonblockingRead.go /^func main/,/^}/
+.play ./exec/12_nonblockingRead.go /^func main/,/^}/
+
+: 'Homeowner, did the package come?, No? Ok, well I'll go do something else'
 
 * Non-blocking writes
-.play ./exec/nonblockingWrite.go /^func main/,/^}/
+.play ./exec/13_nonblockingWrite.go /^func main/,/^}/
+
+: 'Mail man, is anyone home? Ehh, I guess I'll come back later'
 
 * Where to learn next
 .image ./imgs/ReadingGopher.jpg _ 600

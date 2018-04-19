@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// Example code not meant to run
+
 func main() {
 	// Anonymous go routine
 	go func() {
