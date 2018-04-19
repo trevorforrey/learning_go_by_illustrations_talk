@@ -2,7 +2,7 @@ package main
 
 // Example code not meant to run
 // You can find an executable version of this on the file
-// in the program :
+// in the program : /exec/8_passInAndReturnChannel.go
 
 func main() {
 	baseData := [5]string{"rock", "ore", "ore", "rock", "ore"}
